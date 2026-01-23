@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VetCare Clinic | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>🐾 VetCare</h2>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="portal.html">Appointments</a>
+        <a href="#">Pets</a>
+        <a href="#">Vaccinations</a>
+        <a href="#">Messages</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <!-- RIGHT SIDE -->
+    <div class="dashboard-wrapper">
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <h1>Dashboard</h1>
+                <p>Welcome back, Admin</p>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="dash-card">
+                    <h3>📅 Appointments</h3>
+                    <p>12</p>
+                </div>
+                <div class="dash-card">
+                    <h3>🐕 Registered Pets</h3>
+                    <p>45</p>
+                </div>
+                <div class="dash-card">
+                    <h3>💉 Vaccinations</h3>
+                    <p>30</p>
+                </div>
+                <div class="dash-card">
+                    <h3>📨 Messages</h3>
+                    <p>6</p>
+                </div>
+            </section>
+
+            <section class="dashboard-table">
+                <h2>Recent Appointments</h2>
+                <table>
+                    <tr>
+                        <th>Owner</th>
+                        <th>Pet</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Buddy</td>
+                        <td>2026-03-20</td>
+                        <td class="status confirmed">Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Lee</td>
+                        <td>Milo</td>
+                        <td>2026-03-21</td>
+                        <td class="status pending">Pending</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="dashboard-upcoming">
+                <h2>Upcoming Appointments</h2>
+                <ul class="appointment-list">
+                    <li><strong>🐶 Rocky</strong><span>Vaccination — Mar 22, 10:30 AM</span></li>
+                    <li><strong>🐱 Luna</strong><span>Checkup — Mar 23, 01:00 PM</span></li>
+                    <li><strong>🐕 Max</strong><span>Follow-up — Mar 24, 11:15 AM</span></li>
+                </ul>
+            </section>
+
+            <section class="dashboard-alerts">
+                <h2>Messages</h2>
+                <div class="alert warning">⚠️ 5 pets are due for vaccination this week</div>
+                <div class="alert success">✅ All emergency cases cleared today</div>
+                <div class="alert info">ℹ️ New message received from Sarah Lee</div>
+            </section>
+
+            <section class="dashboard-staff">
+                <h2>Staff On Duty</h2>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <h4>👨‍⚕️ Dr. Rahul</h4>
+                        <p>Veterinary Surgeon</p>
+                    </div>
+                    <div class="staff-card">
+                        <h4>👩‍⚕️ Dr. Ananya</h4>
+                        <p>Pet Dermatology</p>
+                    </div>
+                    <div class="staff-card">
+                        <h4>👩‍⚕️ Nurse Meera</h4>
+                        <p>Emergency Care</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER (FULL WIDTH) -->
+        <footer class="dashboard-footer">
+            <span>© 2026 VetCare Clinic. All Rights Reserved.</span>
+            <span>
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms & Conditions</a>
+            </span>
+        </footer>
+
+    </div>
+
+</body>
+</html>
