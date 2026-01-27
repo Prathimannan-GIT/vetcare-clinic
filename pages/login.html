@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare | Login - Access Your Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .auth-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            padding: 20px;
+        }
+
+        .auth-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .auth-link a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span>🐾</span> PetCare Clinic
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                    <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card" style="border-top: 5px solid var(--primary);">
+            <div class="auth-title">
+                <div style="font-size: 3rem; margin-bottom: 10px;">🔐</div>
+                <h2>Welcome Back</h2>
+                <p>Login to manage your appointments</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>
+                        <span style="margin-right: 5px;">📧</span> Email Address
+                    </label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <span style="margin-right: 5px;">🔑</span> Password
+                    </label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+
+                <!-- Demo Credentials Box -->
+                <div
+                    style="background: #f8faff; border: 1px solid #d0d7de; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                        <span style="font-size: 1.2rem;">🗝️</span>
+                        <strong style="color: var(--primary); font-size: 14px;">Clinical Demo Access</strong>
+                    </div>
+                    <div style="display: grid; gap: 8px; font-size: 14px; color: var(--text-dark);">
+                        <div
+                            style="display: flex; justify-content: space-between; background: white; padding: 8px 12px; border-radius: 6px; border: 1px solid #f0f0f0;">
+                            <span style="color: var(--text-light);">Email:</span>
+                            <strong>admin@petcare.com</strong>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; background: white; padding: 8px 12px; border-radius: 6px; border: 1px solid #f0f0f0;">
+                            <span style="color: var(--text-light);">Password:</span>
+                            <strong>admin123</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px;">
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox" style="width: auto;"> Remember me
+                    </label>
+                    <a href="#" style="color: var(--primary);">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem;">
+                    Sign In ➔
+                </button>
+            </form>
+            <div class="auth-link">
+                Don't have an account? <a href="register.html">Register here</a>
+            </div>
+
+            <!-- Verification/Trust Section in Auth Card -->
+            <div
+                style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: center; gap: 20px;">
+                <div style="font-size: 12px; color: var(--text-light); text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 5px;">🛡️</div>
+                    Secure SSL
+                </div>
+                <div style="font-size: 12px; color: var(--text-light); text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 5px;">🔒</div>
+                    Data Protected
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color: white; padding-bottom: 0;">🐾 PetCare</h4>
+                    <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
+                        since 2010. We treat every patient with the love and care they deserve.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">i</a>
+                        <a href="#" class="social-icon">l</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="appointments.html">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <p>📍 123 Pet Lane, Animal City, AC 12345</p>
+                        </li>
+                        <li>
+                            <p>📞 Office: (123) 456-7890</p>
+                        </li>
+                        <li>
+                            <p>🚑 Emergency: (123) 456-7899</p>
+                        </li>
+                        <li>
+                            <p>✉️ support@petcare.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest pet health tips and clinic updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary"
+                            style="padding: 10px 20px; border-radius: 8px;">➔</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PetCare Veterinary Clinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simple demo validation
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user || (email === 'admin@petcare.com' && password === 'admin123')) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('currentUser', email);
+                alert('Login successful!');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid email or password. Use admin@petcare.com / admin123 for demo.');
+            }
+        });
+    </script>
+</body>
+
+</html>

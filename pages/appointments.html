@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare | Book Appointment - Schedule a Visit</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #eee;
+            z-index: -1;
+            transform: translateY(-50%);
+        }
+
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #999;
+            border: 2px solid #fff;
+        }
+
+        .step.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .step.completed {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span>🐾</span> PetCare Clinic
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                    <li><a href="appointments.html" class="nav-link active">Appointments</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="appointments.html" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="section bg-light">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h1>Book an Appointment</h1>
+                <p>Follow the steps below to schedule your visit.</p>
+            </div>
+
+            <div class="booking-container">
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">1</div>
+                    <div class="step" data-step="2">2</div>
+                    <div class="step" data-step="3">3</div>
+                    <div class="step" data-step="4">4</div>
+                    <div class="step" data-step="5">5</div>
+                </div>
+
+                <form id="appointmentForm">
+                    <!-- 1. Appointment Details -->
+                    <div class="form-section active" id="sec1">
+                        <h2>1. Appointment Details</h2>
+                        <div class="form-group">
+                            <label>Preferred Date</label>
+                            <input type="date" id="appDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time</label>
+                            <select id="appTime" required>
+                                <option value="">Select Time</option>
+                                <option>09:00 AM</option>
+                                <option>10:00 AM</option>
+                                <option>11:00 AM</option>
+                                <option>01:00 PM</option>
+                                <option>02:00 PM</option>
+                                <option>03:00 PM</option>
+                                <option>04:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 2. Pet Information -->
+                    <div class="form-section" id="sec2">
+                        <h2>2. Pet Information</h2>
+                        <div class="form-group">
+                            <label>Pet Name</label>
+                            <input type="text" id="petName" placeholder="e.g. Buddy" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pet Type</label>
+                            <select id="petType" required>
+                                <option value="">Select Type</option>
+                                <option>Dog</option>
+                                <option>Cat</option>
+                                <option>Bird</option>
+                                <option>Rabbit</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Pet Age</label>
+                            <input type="number" id="petAge" placeholder="Years" required>
+                        </div>
+                    </div>
+
+                    <!-- 3. Owner Details -->
+                    <div class="form-section" id="sec3">
+                        <h2>3. Owner Details</h2>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="ownerName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="ownerEmail" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="ownerPhone" placeholder="(123) 456-7890" required>
+                        </div>
+                    </div>
+
+                    <!-- 4. Service Selection -->
+                    <div class="form-section" id="sec4">
+                        <h2>4. Service Selection</h2>
+                        <div class="form-group">
+                            <label>Select Service</label>
+                            <select id="serviceType" required>
+                                <option value="">Select Service</option>
+                                <option>General Consultation</option>
+                                <option>Vaccination</option>
+                                <option>Surgery</option>
+                                <option>Dental Cleaning</option>
+                                <option>Grooming</option>
+                                <option>Emergency Visit</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Reason for Visit (Brief)</label>
+                            <textarea id="reason" rows="4" placeholder="Describe the symptom or reason..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 5. Confirmation -->
+                    <div class="form-section" id="sec5">
+                        <div style="text-align: center;">
+                            <div style="font-size: 60px; color: var(--success); margin-bottom: 20px;">✓</div>
+                            <h2>5. Confirm & Submit</h2>
+                            <p>Please review your details. By clicking submit, your appointment request will be sent to
+                                our team.</p>
+                            <div id="summary"
+                                style="text-align: left; background: var(--bg-light); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                                <!-- Summary injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn" id="prevBtn"
+                            style="display: none; background: #ccc;">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit
+                            Appointment</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 6. Pre-visit Checklist (NEW 6th Section) -->
+            <div style="margin-top: 80px;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2>Pre-Visit Checklist</h2>
+                    <p style="color: var(--text-light);">Ensure a smooth and stress-free appointment for your pet.</p>
+                </div>
+                <div class="grid grid-3">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow);">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">📄</div>
+                        <h4>Medical History</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Bring any previous medical records or
+                            vaccination certificates.</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow);">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">💊</div>
+                        <h4>Medication List</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Note down all medications and dosages your
+                            pet is currently taking.</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow);">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">🧺</div>
+                        <h4>Comfort Items</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Bring a favorite toy or blanket to help
+                            your pet feel more at ease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color: white; padding-bottom: 0;">🐾 PetCare</h4>
+                    <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
+                        since 2010. We treat every patient with the love and care they deserve.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">i</a>
+                        <a href="#" class="social-icon">l</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="appointments.html">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <p>📍 123 Pet Lane, Animal City, AC 12345</p>
+                        </li>
+                        <li>
+                            <p>📞 Office: (123) 456-7890</p>
+                        </li>
+                        <li>
+                            <p>🚑 Emergency: (123) 456-7899</p>
+                        </li>
+                        <li>
+                            <p>✉️ support@petcare.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest pet health tips and clinic updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary"
+                            style="padding: 10px 20px; border-radius: 8px;">➔</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PetCare Veterinary Clinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 5;
+        const form = document.getElementById('appointmentForm');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const submitBtn = document.getElementById('submitBtn');
+
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    if (currentStep === 4) showSummary();
+                    currentStep++;
+                    updateUI();
+                }
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        });
+
+        function validateStep(step) {
+            const inputs = document.getElementById(`sec${step}`).querySelectorAll('input, select, textarea');
+            let valid = true;
+            inputs.forEach(input => {
+                if (input.hasAttribute('required') && !input.value) {
+                    input.style.borderColor = 'var(--error)';
+                    valid = false;
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            return valid;
+        }
+
+        function updateUI() {
+            document.querySelectorAll('.form-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(`sec${currentStep}`).classList.add('active');
+
+            document.querySelectorAll('.step').forEach((step, idx) => {
+                const sNum = idx + 1;
+                step.classList.remove('active', 'completed');
+                if (sNum === currentStep) step.classList.add('active');
+                if (sNum < currentStep) step.classList.add('completed');
+            });
+
+            prevBtn.style.display = currentStep === 1 ? 'none' : 'block';
+            nextBtn.style.display = currentStep === totalSteps ? 'none' : 'block';
+            submitBtn.style.display = currentStep === totalSteps ? 'block' : 'none';
+        }
+
+        function showSummary() {
+            const summary = document.getElementById('summary');
+            summary.innerHTML = `
+                <p><strong>Date:</strong> ${document.getElementById('appDate').value} at ${document.getElementById('appTime').value}</p>
+                <p><strong>Pet:</strong> ${document.getElementById('petName').value} (${document.getElementById('petType').value})</p>
+                <p><strong>Owner:</strong> ${document.getElementById('ownerName').value}</p>
+                <p><strong>Service:</strong> ${document.getElementById('serviceType').value}</p>
+            `;
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const appointment = {
+                id: Date.now(),
+                date: document.getElementById('appDate').value,
+                time: document.getElementById('appTime').value,
+                petName: document.getElementById('petName').value,
+                petType: document.getElementById('petType').value,
+                owner: document.getElementById('ownerName').value,
+                service: document.getElementById('serviceType').value,
+                status: 'Pending'
+            };
+
+            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            appointments.push(appointment);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+
+            alert('Appointment Scheduled Successfully!');
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+
+</html>

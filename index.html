@@ -1,167 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <meta charset="UTF-8">
-    <title>VetCare Clinic | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare | Home - Premium Veterinary Clinic</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-    <div class="logo">🐾 VetCare Clinic</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="services.html">Services</a>
-        <a href="portal.html">Pet Owner Portal</a>
-        <a href="contact.html">Contact</a>
-        <!-- AUTH BUTTONS (RIGHT SIDE) -->
-    <div class="auth-buttons">
-        <a href="login.html" class="login-btn">
-            <i class="fa-solid fa-right-to-bracket"></i> Login
-        </a>
-        <a href="register.html" class="register-btn">
-            <i class="fa-solid fa-user-plus"></i> Register
-        </a>
-    </div>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <h1 id="floating-text">VetCare Clinic</h1>
-            <p>Trusted healthcare for your beloved pets</p>
-            <a href="portal.html" class="btn">Book Appointment</a>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span>🐾</span> PetCare Clinic
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="pages/about.html" class="nav-link">About</a></li>
+                    <li><a href="pages/services.html" class="nav-link">Services</a></li>
+                    <li><a href="pages/doctors.html" class="nav-link">Doctors</a></li>
+                    <li><a href="pages/appointments.html" class="nav-link">Appointments</a></li>
+                    <li><a href="pages/dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="pages/login.html" class="nav-link">Login</a>
+                <a href="pages/appointments.html" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </div>
-</section>
-<section class="mega-footer">
-    <div class="mega-footer-grid">
+    </header>
 
-        <!-- OTHER LINKS -->
-        <div class="footer-col">
-            <h4><i class="fa-solid fa-link"></i> Other Links</h4>
-            <ul>
-                <li><i class="fa-solid fa-circle-question"></i> FAQs</li>
-                <li><i class="fa-solid fa-address-book"></i> Contact Us</li>
-                <li><i class="fa-solid fa-hospital"></i> About VetCare</li>
-                <li><i class="fa-solid fa-newspaper"></i> Blogs</li>
-                <li><i class="fa-solid fa-bullhorn"></i> Press & Updates</li>
-            </ul>
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero"
+            style="background: linear-gradient(rgba(42, 92, 130, 0.7), rgba(42, 92, 130, 0.7)), url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; color: white;">
+            <div class="container">
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Compassionate Care for <span
+                        class="highlight-text">Your Best Friends</span></h1>
+                <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 30px;">Premium veterinary services with
+                    state-of-the-art facilities and a team of dedicated specialists.</p>
+                <div class="hero-btns">
+                    <a href="pages/appointments.html" class="btn btn-primary highlight-btn">Book Clinical Visit</a>
+                    <a href="pages/services.html" class="btn" style="border: 2px solid white; margin-left:15px;">Our
+                        Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Services Overview -->
+        <section class="section bg-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2>Our Comprehensive Services</h2>
+                    <p style="color: var(--text-light);">We provide everything your pet needs to thrive.</p>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card"
+                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                        <div style="font-size: 40px; margin-bottom: 15px;">🩺</div>
+                        <h3>General Checkup</h3>
+                        <p style="color: var(--text-light);">Routine examinations to maintain your pet's peak health and
+                            vitality.</p>
+                    </div>
+                    <div class="card"
+                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                        <div style="font-size: 40px; margin-bottom: 15px;">💉</div>
+                        <h3>Vaccinations</h3>
+                        <p style="color: var(--text-light);">Essential immunizations to protect against common and
+                            dangerous diseases.</p>
+                    </div>
+                    <div class="card"
+                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                        <div style="font-size: 40px; margin-bottom: 15px;">✂️</div>
+                        <h3>Grooming</h3>
+                        <p style="color: var(--text-light);">Professional styling and hygiene services for all breeds
+                            and sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Emergency Care Highlight -->
+        <section class="section" style="background: var(--primary); color: white;">
+            <div class="container"
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 style="color: white; margin-bottom: 20px;">24/7 Emergency Medical Response</h2>
+                    <p style="margin-bottom: 0;">In case of any emergency, our specialized trauma unit is ready to
+                        assist your pet at any time of the day or night.</p>
+                </div>
+                <div>
+                    <a href="tel:123456789" class="btn"
+                        style="background: var(--error); color: white; font-size: 1.2rem; padding: 15px 40px;">Call
+                        Emergency: (123) 456-789</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Why Choose Us -->
+        <section class="section">
+            <div class="container">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center;">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=80&w=800"
+                            alt="Veterinary care" style="border-radius: 20px;">
+                    </div>
+                    <div style="padding-left: 50px;">
+                        <h2 style="margin-bottom: 25px;">Why Trust PetCare Clinic?</h2>
+                        <ul style="display: grid; gap: 20px;">
+                            <li style="display: flex; gap: 15px;">
+                                <span style="color: var(--secondary); font-weight: bold;">✔</span>
+                                <div>
+                                    <strong>Advanced Technology:</strong> We use the latest diagnostic and surgical
+                                    equipment.
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 15px;">
+                                <span style="color: var(--secondary); font-weight: bold;">✔</span>
+                                <div>
+                                    <strong>Expert Team:</strong> Our veterinarians are board-certified specialists.
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 15px;">
+                                <span style="color: var(--secondary); font-weight: bold;">✔</span>
+                                <div>
+                                    <strong>Personalized Care:</strong> We treat every pet as if they were our own.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Testimonials -->
+        <section class="section bg-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2>What Pet Owners Say</h2>
+                </div>
+                <div class="grid grid-3">
+                    <div
+                        style="background: white; padding: 30px; border-radius: 10px; border-left: 5px solid var(--secondary); box-shadow: var(--shadow);">
+                        <p style="font-style: italic; margin-bottom: 20px;">"The doctors here are amazing. They saved my
+                            cat after a serious accident. Highly recommended!"</p>
+                        <strong>- Sarah Johnson</strong>
+                    </div>
+                    <div
+                        style="background: white; padding: 30px; border-radius: 10px; border-left: 5px solid var(--secondary); box-shadow: var(--shadow);">
+                        <p style="font-style: italic; margin-bottom: 20px;">"Best grooming service in town. Max always
+                            comes back smelling great and looking handsome."</p>
+                        <strong>- Michael Chen</strong>
+                    </div>
+                    <div
+                        style="background: white; padding: 30px; border-radius: 10px; border-left: 5px solid var(--secondary); box-shadow: var(--shadow);">
+                        <p style="font-style: italic; margin-bottom: 20px;">"Very professional and clean facility. The
+                            online booking makes it so easy to schedule visits."</p>
+                        <strong>- Emily Davis</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Our Simple Process (NEW 6th Section) -->
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2>How It Works</h2>
+                    <p style="color: var(--text-light);">Simple steps to get your pet the care they deserve.</p>
+                </div>
+                <div class="grid grid-4" style="text-align: center;">
+                    <div>
+                        <div style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;">📅</div>
+                        <h4>1. Book Online</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Choose your preferred time and specialist
+                            via our form.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;">🚗</div>
+                        <h4>2. Visit Us</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Bring your pet to our state-of-the-art
+                            clinic.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;">👨‍⚕️</div>
+                        <h4>3. Consultation</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Our expert vets provide a thorough
+                            examination.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;">❤️</div>
+                        <h4>4. Happy Pet</h4>
+                        <p style="font-size: 14px; color: var(--text-light);">Get a personalized treatment or wellness
+                            plan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color: white; padding-bottom: 0;">🐾 PetCare</h4>
+                    <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
+                        since 2010. We treat every patient with the love and care they deserve.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">i</a>
+                        <a href="#" class="social-icon">l</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="pages/services.html">Our Services</a></li>
+                        <li><a href="pages/doctors.html">Our Doctors</a></li>
+                        <li><a href="pages/appointments.html">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <p>📍 123 Pet Lane, Animal City, AC 12345</p>
+                        </li>
+                        <li>
+                            <p>📞 Office: (123) 456-7890</p>
+                        </li>
+                        <li>
+                            <p>🚑 Emergency: (123) 456-7899</p>
+                        </li>
+                        <li>
+                            <p>✉️ support@petcare.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest pet health tips and clinic updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary"
+                            style="padding: 10px 20px; border-radius: 8px;">➔</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PetCare Veterinary Clinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
         </div>
+    </footer>
 
-        <!-- SERVICES -->
-        <div class="footer-col">
-            <h4><i class="fa-solid fa-stethoscope"></i> Our Services</h4>
-            <ul>
-                <li><i class="fa-solid fa-syringe"></i> Vaccination</li>
-                <li><i class="fa-solid fa-paw"></i> General Checkup</li>
-                <li><i class="fa-solid fa-heart-pulse"></i> Emergency Care</li>
-                <li><i class="fa-solid fa-scissors"></i> Grooming</li>
-            </ul>
-        </div>
-
-        <!-- SPECIALITIES -->
-        <div class="footer-col">
-            <h4><i class="fa-solid fa-dna"></i> Specialities</h4>
-            <ul>
-                <li><i class="fa-solid fa-dog"></i> Canine Care</li>
-                <li><i class="fa-solid fa-cat"></i> Feline Care</li>
-                <li><i class="fa-solid fa-crow"></i> Avian Care</li>
-                <li><i class="fa-solid fa-fish"></i> Aquatic Care</li>
-                <li><i class="fa-solid fa-shield-dog"></i> Preventive Care</li>
-            </ul>
-        </div>
-
-        <!-- LOCATIONS -->
-        <div class="footer-col">
-            <h4><i class="fa-solid fa-location-dot"></i> Cities We Serve</h4>
-            <ul>
-                <li>Ahmedabad</li>
-                <li>Vadodara</li>
-                <li>Surat</li>
-                <li>Mumbai</li>
-                <li>Bangalore</li>
-                <li>Delhi</li>
-            </ul>
-        </div>
-
-        <!-- PET HEALTH -->
-        <div class="footer-col">
-            <h4><i class="fa-solid fa-notes-medical"></i> Pet Health</h4>
-            <ul>
-                <li><i class="fa-solid fa-tooth"></i> Dental Issues</li>
-                <li><i class="fa-solid fa-heart"></i> Heart Problems</li>
-                <li><i class="fa-solid fa-bug"></i> Skin Infections</li>
-                <li><i class="fa-solid fa-eye"></i> Eye Care</li>
-                <li><i class="fa-solid fa-bone"></i> Joint Problems</li>
-            </ul>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="footer-col">
-            <h4><i class="fa-solid fa-envelope"></i> Contact</h4>
-            <p class="footer-contact">
-                <i class="fa-solid fa-envelope"></i> contact@vetcareclinic.com<br>
-                <i class="fa-solid fa-phone"></i> +130 45678 890<br>
-                <i class="fa-solid fa-clock"></i> Mon – Sun : 9AM – 9PM
-            </p>
-        </div>
-
-        <!-- Social & App Links -->
-<div class="footer-col">
-    <h4><i class="fas fa-share-alt"></i> Connect With Us</h4>
-
-    <!-- Social Icons -->
-    <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    </div>
-
-    
-</div>
-<!-- App Download -->
-    <div class="app-download">
-        <p>Download Our App</p>
-        <a href="#" class="store-btn playstore">
-            <i class="fab fa-google-play"></i>
-            <span>
-                <small>Get it on</small><br>Google Play
-            </span>
-        </a>
-
-        <a href="#" class="store-btn appstore">
-            <i class="fab fa-apple"></i>
-            <span>
-                <small>Download on</small><br>App Store
-            </span>
-        </a>
-    </div>
-
-    </div>
-</section>
-
-
-<footer class="footer">
-    <div class="footer-left">
-        © 2026 VetCare Clinic. All Rights Reserved.
-    </div>
-
-    <div class="footer-right">
-        <a href="privacy.html">Privacy & Policy</a>
-        <span>|</span>
-        <a href="terms.html">Terms & Conditions</a>
-    </div>
-</footer>
-
-
-<!-- TEXT ANIMATION SCRIPT -->
-<script src="js/text-animation.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

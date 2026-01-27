@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare | Dashboard - Manage Your Clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .dashboard-body {
+            display: flex;
+            min-height: 100vh;
+            background: #f0f2f5;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: var(--primary);
+            color: white;
+            padding: 30px 20px;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .sidebar-brand {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .dash-section {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .dash-section.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        th,
+        td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        th {
+            background: #fafafa;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        tr {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-pending {
+            background: #fff8e1;
+            color: #ffa000;
+        }
+
+        .badge-approved {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge-completed {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .logout-btn {
+            margin-top: auto;
+            cursor: pointer;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                position: fixed;
+                left: -260px;
+                height: 100%;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .dashboard-body {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">🐾 PetCare Admin</div>
+        <ul class="sidebar-nav">
+            <li><a href="#" class="sidebar-link active" data-target="overview">🏠 Overview</a></li>
+            <li><a href="#" class="sidebar-link" data-target="appointments">📅 Appointments</a></li>
+            <li><a href="#" class="sidebar-link" data-target="records">🐕 Pet Records</a></li>
+            <li><a href="#" class="sidebar-link" data-target="staff">👨‍⚕️ Doctors</a></li>
+            <li><a href="#" class="sidebar-link" data-target="messages">💬 Messages</a></li>
+            <li><a href="#" class="sidebar-link" data-target="resources">📚 Resources</a></li>
+        </ul>
+        <div class="logout-btn" id="logoutBtn">🚪 Logout</div>
+    </aside>
+
+    <main class="main-content">
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: var(--shadow);">
+            <div class="hamburger" id="dashMenu" style="display: block; visibility: hidden;">
+                <span></span><span></span><span></span>
+            </div>
+            <h2 id="dashTitle" style="color: var(--primary);">Dashboard Overview</h2>
+            <div id="userWelcome"
+                style="background: var(--bg-light); padding: 8px 20px; border-radius: 50px; font-weight: 600; color: var(--primary);">
+                👋 Hi, <span class="highlight-text">Admin</span></div>
+        </header>
+
+        <!-- 1. Overview Section -->
+        <section class="dash-section active" id="overview">
+            <div class="grid grid-4" style="gap: 20px;">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e3f2fd; color: #1e88e5;">📅</div>
+                    <div>
+                        <h4 id="totalApps">0</h4>
+                        <p>Appointments</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e8f5e9; color: #43a047;">🐾</div>
+                    <div>
+                        <h4>42</h4>
+                        <p>Total Pets</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #fff3e0; color: #fb8c00;">👨‍⚕️</div>
+                    <div>
+                        <h4>8</h4>
+                        <p>On-duty Doctors</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #f3e5f5; color: #8e24aa;">⭐</div>
+                    <div>
+                        <h4>4.9</h4>
+                        <p>Avg Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <h3>Recent Appointments</h3>
+                <div style="overflow-x: auto; margin-top: 20px;">
+                    <table id="recentAppsTable">
+                        <thead>
+                            <tr>
+                                <th>Pet Name</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody><!-- JS Injected --></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Appointments Management -->
+        <section class="dash-section" id="appointments">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>Manage All Appointments</h3>
+                <a href="appointments.html" class="btn btn-primary btn-sm">+ New Appt</a>
+            </div>
+            <table id="fullAppsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Owner</th>
+                        <th>Pet</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody><!-- JS Injected --></tbody>
+            </table>
+        </section>
+
+        <!-- 3. Pet & Patient Records -->
+        <section class="dash-section" id="records">
+            <h3>Registered Pet Records</h3>
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Pet ID</th>
+                        <th>Name</th>
+                        <th>Species</th>
+                        <th>Owner</th>
+                        <th>Last Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#PET001</td>
+                        <td>Buddy</td>
+                        <td>Dog (Golden)</td>
+                        <td>John Doe</td>
+                        <td>2026-01-15</td>
+                    </tr>
+                    <tr>
+                        <td>#PET002</td>
+                        <td>Luna</td>
+                        <td>Cat (Siamese)</td>
+                        <td>Emily S.</td>
+                        <td>2026-01-20</td>
+                    </tr>
+                    <tr>
+                        <td>#PET003</td>
+                        <td>Charlie</td>
+                        <td>Rabbit</td>
+                        <td>Michael B.</td>
+                        <td>2025-12-10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 4. Doctors Management -->
+        <section class="dash-section" id="staff">
+            <h3>Medical Staff & Schedules</h3>
+            <div class="grid grid-3" style="margin-top: 20px; gap: 20px;">
+                <div class="stat-card">
+                    <div><strong>Dr. Julia Smith</strong>
+                        <p>Internal Medicine</p>
+                        <p style="font-size: 12px; color: green;">Status: Available</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div><strong>Dr. Robert Brown</strong>
+                        <p>Surgery</p>
+                        <p style="font-size: 12px; color: red;">Status: In Surgery</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div><strong>Dr. Sarah Lee</strong>
+                        <p>Cardiology</p>
+                        <p style="font-size: 12px; color: green;">Status: Available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Messages & Notifications -->
+        <section class="dash-section" id="messages">
+            <h3>System Notifications</h3>
+            <div
+                style="background: white; padding: 25px; border-radius: 12px; margin-top: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div
+                    style="border-bottom: 1px solid #eee; padding: 15px 0; display: flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 1.5rem;">🔔</span>
+                    <div>
+                        <strong>[System]</strong> Backup completed successfully at 04:00 AM.
+                        <p style="font-size: 12px; color: var(--text-light);">2 hours ago</p>
+                    </div>
+                </div>
+                <div
+                    style="border-bottom: 1px solid #eee; padding: 15px 0; display: flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 1.5rem;">📅</span>
+                    <div>
+                        <strong>[Appointment]</strong> New booking request for Buddy (Dog) by John Doe.
+                        <p style="font-size: 12px; color: var(--text-light);">5 hours ago</p>
+                    </div>
+                </div>
+                <div style="padding: 15px 0; display: flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 1.5rem;">⚠️</span>
+                    <div>
+                        <strong>[Alert]</strong> Vaccine stock for Rabies is running low.
+                        <p style="font-size: 12px; color: var(--text-light);">Yesterday</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. System Resources & Help (NEW 6th Section) -->
+        <section class="dash-section" id="resources">
+            <div class="grid grid-2" style="gap: 25px;">
+                <div
+                    style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--primary);">
+                    <h4>📖 Documentation</h4>
+                    <p style="font-size: 14px; color: var(--text-light); margin-top: 10px;">Quick guides on how to
+                        manage pet records and clinical schedules efficiently.</p>
+                    <a href="#"
+                        style="color: var(--primary); font-weight: 600; display: inline-block; margin-top: 15px;">View
+                        Guides ➔</a>
+                </div>
+                <div
+                    style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--secondary);">
+                    <h4>🛠️ Support Center</h4>
+                    <p style="font-size: 14px; color: var(--text-light); margin-top: 10px;">Encountered a bug or need
+                        technical help? Our support team is available 24/7.</p>
+                    <a href="#"
+                        style="color: var(--primary); font-weight: 600; display: inline-block; margin-top: 15px;">Open
+                        Ticket ➔</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section inside Main Content -->
+        <footer style="margin-top: 60px; border-radius: 12px; padding: 40px 0 20px;">
+            <div class="container" style="padding: 0 20px;">
+                <div class="footer-grid" style="gap: 30px;">
+                    <div class="footer-col">
+                        <h4 class="logo" style="color: white; padding-bottom: 0; font-size: 18px;">🐾 PetCare Admin</h4>
+                        <p style="margin-top: 15px; font-size: 13px;">Secure management portal for clinical staff and
+                            administrators. Access restricted to authorized personnel only.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul style="font-size: 13px;">
+                            <li><a href="#">Admin Guide</a></li>
+                            <li><a href="#">Support Ticket</a></li>
+                            <li><a href="#">System Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Support</h4>
+                        <ul style="font-size: 13px;">
+                            <li>
+                                <p>📞 Ext: 101/102</p>
+                            </li>
+                            <li>
+                                <p>✉️ it-support@petcare.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom" style="margin-top: 30px; font-size: 12px;">
+                    <p>&copy; 2026 Internal Portal | PetCare Clinic</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Auth Check
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Sidebar Navigation Logic
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const sections = document.querySelectorAll('.dash-section');
+        const dashTitle = document.getElementById('dashTitle');
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                sections.forEach(s => s.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+
+                dashTitle.textContent = link.textContent.substring(3);
+
+                if (window.innerWidth <= 992) {
+                    document.getElementById('sidebar').classList.remove('active');
+                }
+            });
+        });
+
+        // Mobile Sidebar Toggle (Wait for main.js or implement here)
+        window.addEventListener('resize', () => {
+            const menu = document.getElementById('dashMenu');
+            menu.style.visibility = window.innerWidth <= 992 ? 'visible' : 'hidden';
+            menu.classList.remove('is-active');
+        });
+
+        document.getElementById('dashMenu').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+            this.classList.toggle('is-active');
+        });
+
+        // Initial check for menu visibility
+        if (window.innerWidth <= 992) document.getElementById('dashMenu').style.visibility = 'visible';
+
+        // Load Appointments from LocalStorage
+        function loadDashboardData() {
+            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            document.getElementById('totalApps').textContent = appointments.length;
+
+            const recentAppsTable = document.querySelector('#recentAppsTable tbody');
+            const fullAppsTable = document.querySelector('#fullAppsTable tbody');
+
+            recentAppsTable.innerHTML = '';
+            fullAppsTable.innerHTML = '';
+
+            appointments.slice(-5).reverse().forEach(app => {
+                recentAppsTable.innerHTML += `
+                    <tr>
+                        <td>${app.petName}</td>
+                        <td>${app.service}</td>
+                        <td>${app.date}</td>
+                        <td><span class="badge badge-${app.status.toLowerCase()}">${app.status}</span></td>
+                    </tr>
+                `;
+            });
+
+            appointments.reverse().forEach(app => {
+                fullAppsTable.innerHTML += `
+                    <tr>
+                        <td>#${app.id.toString().slice(-4)}</td>
+                        <td>${app.owner}</td>
+                        <td>${app.petName}</td>
+                        <td>${app.service}</td>
+                        <td><span class="badge badge-${app.status.toLowerCase()}">${app.status}</span></td>
+                        <td>
+                            <select onchange="updateStatus(${app.id}, this.value)" style="padding: 5px; font-size: 12px;">
+                                <option ${app.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                                <option ${app.status === 'Approved' ? 'selected' : ''}>Approved</option>
+                                <option ${app.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                            </select>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        window.updateStatus = function (id, status) {
+            let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            appointments = appointments.map(app => app.id === id ? { ...app, status } : app);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+            loadDashboardData();
+        };
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        });
+
+        loadDashboardData();
+    </script>
+</body>
+
+</html>
