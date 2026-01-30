@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare | Services - Comprehensive Pet Care</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -12,27 +13,44 @@
 
     <header>
         <div class="container">
-            <a href="../index.html" class="logo">
-                <span>🐾</span> PetCare Clinic
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link active">Services</a></li>
-                    <li><a href="doctors.html" class="nav-link">Doctors</a></li>
-                    <li><a href="appointments.html" class="nav-link">Appointments</a></li>
-                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <a href="login.html" class="nav-link">Login</a>
-                <a href="appointments.html" class="btn btn-primary">Book Now</a>
+            <div class="header-left">
+                <a href="../index.html" class="logo">
+                    <span>🐾</span> PetCare 
+                </a>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-center">
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link active">Services</a></li>
+                        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                        <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="nav-actions desktop-only">
+                    <button class="theme-toggle desktop-theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -42,23 +60,25 @@
         <section class="section">
             <div class="container">
                 <div class="grid"
-                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px;">
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px; text-align: center;">
                     <div>
                         <h2 style="color: var(--primary); margin-bottom: 20px;">General Health Checkups</h2>
-                        <p style="margin-bottom: 15px;">Regular wellness exams are the foundation of your pet's health.
+                        <p style="margin-bottom: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">Regular wellness exams are the foundation of your pet's health.
                             Our thorough checkups include physical assessment, nutritional advice, and early disease
                             detection.</p>
-                        <ul style="margin-bottom: 25px; display: grid; gap: 10px;">
+                        <ul style="margin-bottom: 25px; display: grid; gap: 10px; max-width: 400px; margin-left: auto; margin-right: auto;">
                             <li>✅ Physical examinations</li>
                             <li>✅ Weight & nutritional monitoring</li>
                             <li>✅ Parasite control & prevention</li>
                             <li>✅ Behavioral consultations</li>
                         </ul>
-                        <a href="appointments.html" class="btn btn-primary">Book a Checkup</a>
+                        <div>
+                            <a href="appointments.html" class="btn btn-primary">Book a Checkup</a>
+                        </div>
                     </div>
                     <div>
                         <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&q=80&w=800"
-                            alt="Checkup" style="border-radius: 20px;">
+                            alt="Checkup" style="border-radius: 20px; max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -68,17 +88,17 @@
         <section class="section bg-light">
             <div class="container">
                 <div class="grid"
-                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px;">
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px; text-align: center;">
                     <div style="order: 2;">
                         <h2 style="color: var(--primary); margin-bottom: 20px;">Vaccination Services</h2>
-                        <p style="margin-bottom: 15px;">Protect your pets from life-threatening diseases with our
+                        <p style="margin-bottom: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">Protect your pets from life-threatening diseases with our
                             customizable vaccination plans tailored to their lifestyle and age.</p>
-                        <p>We provide core vaccines for cats, dogs, and exotic pets, along with non-core options based
+                        <p style="max-width: 600px; margin-left: auto; margin-right: auto;">We provide core vaccines for cats, dogs, and exotic pets, along with non-core options based
                             on exposure risks.</p>
                     </div>
                     <div style="order: 1;">
                         <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
-                            alt="Vaccination" style="border-radius: 20px;">
+                            alt="Vaccination" style="border-radius: 20px; max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -88,16 +108,16 @@
         <section class="section">
             <div class="container">
                 <div class="grid"
-                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px;">
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px; text-align: center;">
                     <div>
                         <h2 style="color: var(--primary); margin-bottom: 20px;">Advanced Surgery & Diagnostics</h2>
-                        <p style="margin-bottom: 15px;">From routine spays and neuters to complex soft-tissue surgeries,
+                        <p style="margin-bottom: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">From routine spays and neuters to complex soft-tissue surgeries,
                             our surgical team uses advanced techniques and monitoring equipment.</p>
-                        <p>Our imaging services include digital X-ray and ultrasound for fast, accurate results.</p>
+                        <p style="max-width: 600px; margin-left: auto; margin-right: auto;">Our imaging services include digital X-ray and ultrasound for fast, accurate results.</p>
                     </div>
                     <div>
                         <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
-                            alt="Surgery" style="border-radius: 20px;">
+                            alt="Surgery" style="border-radius: 20px; max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -107,12 +127,12 @@
         <section class="section bg-light">
             <div class="container">
                 <div class="grid"
-                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px;">
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px; text-align: center;">
                     <div style="order: 2;">
                         <h2 style="color: var(--primary); margin-bottom: 20px;">Grooming & Wellness</h2>
-                        <p style="margin-bottom: 15px;">Hygiene is as important as medicine. Our professional grooming
+                        <p style="margin-bottom: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">Hygiene is as important as medicine. Our professional grooming
                             services help prevent skin issues and keep your pet comfortable.</p>
-                        <ul style="display: grid; gap: 10px;">
+                        <ul style="display: grid; gap: 10px; max-width: 400px; margin-left: auto; margin-right: auto;">
                             <li>🛁 Therapeutic bathing</li>
                             <li>💅 Nail trimming & ear cleaning</li>
                             <li>💈 Breed-specific styling</li>
@@ -121,7 +141,7 @@
                     </div>
                     <div style="order: 1;">
                         <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800"
-                            alt="Grooming" style="border-radius: 20px;">
+                            alt="Grooming" style="border-radius: 20px; max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare | Home - Premium Veterinary Clinic</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,27 +14,45 @@
     <!-- Header Section -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo">
-                <span>🐾</span> PetCare Clinic
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="pages/about.html" class="nav-link">About</a></li>
-                    <li><a href="pages/services.html" class="nav-link">Services</a></li>
-                    <li><a href="pages/doctors.html" class="nav-link">Doctors</a></li>
-                    <li><a href="pages/appointments.html" class="nav-link">Appointments</a></li>
-                    <li><a href="pages/dashboard.html" class="nav-link">Dashboard</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <a href="pages/login.html" class="nav-link">Login</a>
-                <a href="pages/appointments.html" class="btn btn-primary">Book Now</a>
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <span>🐾</span> PetCare 
+                </a>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-center">
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="pages/home2.html" class="nav-link">Home 2</a></li>
+                        <li><a href="pages/about.html" class="nav-link ">About</a></li>
+                        <li><a href="pages/services.html" class="nav-link">Services</a></li>
+                        <li><a href="pages/doctors.html" class="nav-link">Doctors</a></li>
+                        <li><a href="pages/appointments.html" class="nav-link">Appointments</a></li>
+                        <li><a href="pages/dashboard.html" class="nav-link">Dashboard</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="pages/login.html" class="btn btn-secondary">Login</a>
+                    <a href="pages/register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="nav-actions desktop-only">
+                    <button class="theme-toggle desktop-theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="pages/login.html" class="btn btn-secondary">Login</a>
+                    <a href="pages/register.html" class="btn btn-primary">Register</a>
+                </div>
+                <div class="hamburger">
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -42,14 +61,14 @@
         <!-- 1. Hero Section -->
         <section class="hero"
             style="background: linear-gradient(rgba(42, 92, 130, 0.7), rgba(42, 92, 130, 0.7)), url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; color: white;">
-            <div class="container">
-                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Compassionate Care for <span
+            <div class="container" style="text-align: center;">
+                <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; max-width: 100%; word-wrap: break-word;">Compassionate Care for <span
                         class="highlight-text">Your Best Friends</span></h1>
-                <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 30px;">Premium veterinary services with
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">Premium veterinary services with
                     state-of-the-art facilities and a team of dedicated specialists.</p>
-                <div class="hero-btns">
+                <div class="hero-btns" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                     <a href="pages/appointments.html" class="btn btn-primary highlight-btn">Book Clinical Visit</a>
-                    <a href="pages/services.html" class="btn" style="border: 2px solid white; margin-left:15px;">Our
+                    <a href="pages/services.html" class="btn" style="border: 2px solid white; color: white;">Our
                         Services</a>
                 </div>
             </div>
@@ -64,21 +83,21 @@
                 </div>
                 <div class="grid grid-3">
                     <div class="card"
-                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                        style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
                         <div style="font-size: 40px; margin-bottom: 15px;">🩺</div>
                         <h3>General Checkup</h3>
                         <p style="color: var(--text-light);">Routine examinations to maintain your pet's peak health and
                             vitality.</p>
                     </div>
                     <div class="card"
-                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                        style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
                         <div style="font-size: 40px; margin-bottom: 15px;">💉</div>
                         <h3>Vaccinations</h3>
                         <p style="color: var(--text-light);">Essential immunizations to protect against common and
                             dangerous diseases.</p>
                     </div>
                     <div class="card"
-                        style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                        style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
                         <div style="font-size: 40px; margin-bottom: 15px;">✂️</div>
                         <h3>Grooming</h3>
                         <p style="color: var(--text-light);">Professional styling and hygiene services for all breeds
@@ -110,28 +129,28 @@
             <div class="container">
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center;">
-                    <div>
+                    <div style="text-align: center;">
                         <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=80&w=800"
-                            alt="Veterinary care" style="border-radius: 20px;">
+                            alt="Veterinary care" style="border-radius: 20px; max-width: 100%; height: auto;">
                     </div>
-                    <div style="padding-left: 50px;">
+                    <div style="padding: 20px; text-align: center;">
                         <h2 style="margin-bottom: 25px;">Why Trust PetCare Clinic?</h2>
-                        <ul style="display: grid; gap: 20px;">
-                            <li style="display: flex; gap: 15px;">
-                                <span style="color: var(--secondary); font-weight: bold;">✔</span>
+                        <ul style="display: grid; gap: 20px; list-style: none; padding: 0;">
+                            <li style="display: flex; gap: 15px; align-items: center; justify-content: center; text-align: left;">
+                                <span style="color: var(--secondary); font-weight: bold; font-size: 18px;">✔</span>
                                 <div>
                                     <strong>Advanced Technology:</strong> We use the latest diagnostic and surgical
                                     equipment.
                                 </div>
                             </li>
-                            <li style="display: flex; gap: 15px;">
-                                <span style="color: var(--secondary); font-weight: bold;">✔</span>
+                            <li style="display: flex; gap: 15px; align-items: center; justify-content: center; text-align: left;">
+                                <span style="color: var(--secondary); font-weight: bold; font-size: 18px;">✔</span>
                                 <div>
                                     <strong>Expert Team:</strong> Our veterinarians are board-certified specialists.
                                 </div>
                             </li>
-                            <li style="display: flex; gap: 15px;">
-                                <span style="color: var(--secondary); font-weight: bold;">✔</span>
+                            <li style="display: flex; gap: 15px; align-items: center; justify-content: center; text-align: left;">
+                                <span style="color: var(--secondary); font-weight: bold; font-size: 18px;">✔</span>
                                 <div>
                                     <strong>Personalized Care:</strong> We treat every pet as if they were our own.
                                 </div>
@@ -217,10 +236,10 @@
                     <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
                         since 2010. We treat every patient with the love and care they deserve.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">t</a>
-                        <a href="#" class="social-icon">i</a>
-                        <a href="#" class="social-icon">l</a>
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">💼</a>
                     </div>
                 </div>
                 <div class="footer-col">

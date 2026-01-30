@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare | Book Appointment - Schedule a Visit</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .form-section {
@@ -88,27 +89,45 @@
 
     <header>
         <div class="container">
-            <a href="../index.html" class="logo">
-                <span>🐾</span> PetCare Clinic
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="doctors.html" class="nav-link">Doctors</a></li>
-                    <li><a href="appointments.html" class="nav-link active">Appointments</a></li>
-                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <a href="login.html" class="nav-link">Login</a>
-                <a href="appointments.html" class="btn btn-primary">Book Now</a>
+            <div class="header-left">
+                <a href="../index.html" class="logo">
+                    <span>🐾</span> PetCare 
+                </a>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-center">
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                        <li><a href="appointments.html" class="nav-link active">Appointments</a></li>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="nav-actions desktop-only">
+                    <button class="theme-toggle desktop-theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+                <div class="hamburger">
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -116,8 +135,8 @@
     <main class="section bg-light">
         <div class="container">
             <div style="text-align: center; margin-bottom: 40px;">
-                <h1>Book an Appointment</h1>
-                <p>Follow the steps below to schedule your visit.</p>
+                <h1 style="font-size: clamp(2rem, 5vw, 3rem);">Book an Appointment</h1>
+                <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Follow the steps below to schedule your visit.</p>
             </div>
 
             <div class="booking-container">

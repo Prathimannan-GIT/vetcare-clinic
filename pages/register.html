@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare | Register - Join Our Clinic</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .auth-container {
-            min-height: calc(100vh - 200px);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-light);
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary) 100%);
             padding: 20px;
         }
 
@@ -23,6 +24,7 @@
             box-shadow: var(--shadow);
             width: 100%;
             max-width: 450px;
+            text-align: center;
         }
 
         .auth-title {
@@ -41,28 +43,58 @@
             color: var(--primary);
             font-weight: 600;
         }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .back-home:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
+        }
+
+        @media (max-width: 480px) {
+            .back-home {
+                top: 15px;
+                left: 15px;
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 
 <body>
-
-    <header>
-        <div class="container">
-            <a href="../index.html" class="logo">
-                <span>🐾</span> PetCare Clinic
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+    <a href="../index.html" class="back-home">
+        <span>←</span> Back to Home
+    </a>
     <main class="auth-container">
-        <div class="auth-card" style="border-top: 5px solid var(--secondary);">
+        <div class="auth-card">
             <div class="auth-title">
                 <div style="font-size: 3rem; margin-bottom: 10px;">📝</div>
                 <h2>Create Account</h2>
@@ -98,69 +130,8 @@
                     Complete Registration ➔
                 </button>
             </form>
-            <div class="auth-link">
-                Already have an account? <a href="login.html">Login here</a>
-            </div>
         </div>
     </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="logo" style="color: white; padding-bottom: 0;">🐾 PetCare</h4>
-                    <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
-                        since 2010. We treat every patient with the love and care they deserve.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">t</a>
-                        <a href="#" class="social-icon">i</a>
-                        <a href="#" class="social-icon">l</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="doctors.html">Our Doctors</a></li>
-                        <li><a href="appointments.html">Appointments</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>
-                            <p>📍 123 Pet Lane, Animal City, AC 12345</p>
-                        </li>
-                        <li>
-                            <p>📞 Office: (123) 456-7890</p>
-                        </li>
-                        <li>
-                            <p>🚑 Emergency: (123) 456-7899</p>
-                        </li>
-                        <li>
-                            <p>✉️ support@petcare.com</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get the latest pet health tips and clinic updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary"
-                            style="padding: 10px 20px; border-radius: 8px;">➔</button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 PetCare Veterinary Clinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
-                        href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         document.getElementById('registerForm').addEventListener('submit', (e) => {

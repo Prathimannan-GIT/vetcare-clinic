@@ -8,21 +8,86 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .auth-container {
-            min-height: calc(100vh - 200px);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-light);
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--primary) 100%);
             padding: 20px;
         }
 
         .auth-card {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .social-login {
+            margin: 30px 0;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+
+        .social-title {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #eee;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 20px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn.google:hover {
+            border-color: #ea4335;
+            color: #ea4335;
+        }
+
+        .social-btn.facebook:hover {
+            border-color: #1877f2;
+            color: #1877f2;
+        }
+
+        .social-btn.twitter:hover {
+            border-color: #1da1f2;
+            color: #1da1f2;
         }
 
         .auth-title {
@@ -41,33 +106,48 @@
             color: var(--primary);
             font-weight: 600;
         }
+
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .back-home:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 92, 130, 0.3);
+        }
+
+        @media (max-width: 480px) {
+            .back-home {
+                top: 15px;
+                left: 15px;
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="container">
-            <a href="../index.html" class="logo">
-                <span>🐾</span> PetCare Clinic
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="doctors.html" class="nav-link">Doctors</a></li>
-                    <li><a href="appointments.html" class="nav-link">Appointments</a></li>
-                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
+    <a href="../index.html" class="back-home">
+        <span>←</span> Back to Home
+    </a>
 
     <main class="auth-container">
         <div class="auth-card" style="border-top: 5px solid var(--primary);">
@@ -122,6 +202,17 @@
                     Sign In ➔
                 </button>
             </form>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <div class="social-title">Or continue with</div>
+                <div class="social-buttons">
+                    <div class="social-btn google" title="Google">🌐</div>
+                    <div class="social-btn facebook" title="Facebook">📘</div>
+                    <div class="social-btn twitter" title="Twitter">🐦</div>
+                </div>
+            </div>
+
             <div class="auth-link">
                 Don't have an account? <a href="register.html">Register here</a>
             </div>
@@ -141,64 +232,6 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="logo" style="color: white; padding-bottom: 0;">🐾 PetCare</h4>
-                    <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
-                        since 2010. We treat every patient with the love and care they deserve.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">t</a>
-                        <a href="#" class="social-icon">i</a>
-                        <a href="#" class="social-icon">l</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="doctors.html">Our Doctors</a></li>
-                        <li><a href="appointments.html">Appointments</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>
-                            <p>📍 123 Pet Lane, Animal City, AC 12345</p>
-                        </li>
-                        <li>
-                            <p>📞 Office: (123) 456-7890</p>
-                        </li>
-                        <li>
-                            <p>🚑 Emergency: (123) 456-7899</p>
-                        </li>
-                        <li>
-                            <p>✉️ support@petcare.com</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get the latest pet health tips and clinic updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary"
-                            style="padding: 10px 20px; border-radius: 8px;">➔</button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 PetCare Veterinary Clinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
-                        href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
     <script>
         document.getElementById('loginForm').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -217,6 +250,14 @@
             } else {
                 alert('Invalid email or password. Use admin@petcare.com / admin123 for demo.');
             }
+        });
+
+        // Social login handlers (demo)
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const platform = btn.title;
+                alert(`${platform} login would be implemented here with OAuth integration.`);
+            });
         });
     </script>
 </body>

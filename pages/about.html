@@ -5,34 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare | About Us - Premium Veterinary Clinic</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <header>
+   <header>
         <div class="container">
-            <a href="../index.html" class="logo">
-                <span>🐾</span> PetCare Clinic
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link active">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="doctors.html" class="nav-link">Doctors</a></li>
-                    <li><a href="appointments.html" class="nav-link">Appointments</a></li>
-                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <a href="login.html" class="nav-link">Login</a>
-                <a href="appointments.html" class="btn btn-primary">Book Now</a>
+            <div class="header-left">
+                <a href="../index.html" class="logo">
+                    <span>🐾</span> PetCare 
+                </a>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-center">
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="home2.html" class="nav-link">Home 2</a></li>
+                        <li><a href="about.html" class="nav-link active">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+                        <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="nav-actions desktop-only">
+                    <button class="theme-toggle desktop-theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+                <div class="hamburger">
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -43,19 +62,19 @@
             <div class="container">
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 60px;">
-                    <div>
-                        <h1 style="color: var(--primary); margin-bottom: 20px;">Dedicated to the <span
+                    <div style="text-align: center;">
+                        <h1 style="color: var(--primary); margin-bottom: 20px; font-size: clamp(2rem, 5vw, 3rem);">Dedicated to the <span
                                 class="highlight-text">Health</span> of Your Pets
                         </h1>
-                        <p style="margin-bottom: 20px;">Founded in 2010, PetCare Clinic has grown from a small local
+                        <p style="margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Founded in 2010, PetCare Clinic has grown from a small local
                             practice to a leading regional veterinary center. We are committed to excellence in
                             everything we do, from basic checkups to advanced surgery.</p>
-                        <p>Our facility is equipped with modern diagnostic tools to ensure your pet gets the most
+                        <p style="max-width: 600px; margin-left: auto; margin-right: auto;">Our facility is equipped with modern diagnostic tools to ensure your pet gets the most
                             accurate treatment possible.</p>
                     </div>
-                    <div>
+                    <div style="text-align: center;">
                         <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=800"
-                            alt="Clinic" style="border-radius: 20px; box-shadow: var(--shadow);">
+                            alt="Clinic" style="border-radius: 20px; box-shadow: var(--shadow); max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -93,18 +112,18 @@
             <div class="container">
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 50px;">
-                    <div style="order: 2;">
+                    <div style="order: 2; text-align: center;">
                         <h2>State-of-the-Art Facilities</h2>
-                        <ul style="margin-top: 20px; display: grid; gap: 15px;">
-                            <li>🏠 Modern sterile operating theaters</li>
-                            <li>🩻 Digital X-ray and Ultrasound imaging</li>
-                            <li>🧪 On-site pathology laboratory</li>
-                            <li>🛌 Comfortable recovery suites</li>
+                        <ul style="margin-top: 20px; display: grid; gap: 15px; list-style: none; padding: 0; max-width: 500px; margin-left: auto; margin-right: auto;">
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🏠 Modern sterile operating theaters</li>
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🩻 Digital X-ray and Ultrasound imaging</li>
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🧪 On-site pathology laboratory</li>
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🛌 Comfortable recovery suites</li>
                         </ul>
                     </div>
-                    <div style="order: 1;">
+                    <div style="order: 1; text-align: center;">
                         <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800"
-                            alt="Equipment" style="border-radius: 20px;">
+                            alt="Equipment" style="border-radius: 20px; max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -154,20 +173,20 @@
             <div class="container">
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; gap: 60px;">
-                    <div>
+                    <div style="text-align: center;">
                         <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87f?auto=format&fit=crop&q=80&w=800"
-                            alt="Giving back" style="border-radius: 20px; box-shadow: var(--shadow);">
+                            alt="Giving back" style="border-radius: 20px; box-shadow: var(--shadow); max-width: 100%; height: auto;">
                     </div>
-                    <div>
+                    <div style="text-align: center;">
                         <h2>Giving Back to Our Community</h2>
-                        <p style="margin-bottom: 20px; margin-top:20px;">We believe in supporting the community that
+                        <p style="margin-bottom: 20px; margin-top:20px; max-width: 600px; margin-left: auto; margin-right: auto;">We believe in supporting the community that
                             supports us. PetCare Clinic regularly partners with local shelters and rescue organizations.
                         </p>
-                        <ul style="display: grid; gap: 15px;">
-                            <li>🐕 Free health checkups for shelter animals</li>
-                            <li>📢 Educational workshops for new pet owners</li>
-                            <li>🤝 Sponsorship of local animal welfare events</li>
-                            <li>🕊️ Assistance programs for seniors with pets</li>
+                        <ul style="display: grid; gap: 15px; list-style: none; padding: 0; max-width: 500px; margin-left: auto; margin-right: auto;">
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🐕 Free health checkups for shelter animals</li>
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">📢 Educational workshops for new pet owners</li>
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🤝 Sponsorship of local animal welfare events</li>
+                            <li style="display: flex; align-items: center; gap: 10px; justify-content: center; text-align: left;">🕊️ Assistance programs for seniors with pets</li>
                         </ul>
                     </div>
                 </div>
@@ -183,10 +202,10 @@
                     <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
                         since 2010. We treat every patient with the love and care they deserve.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">t</a>
-                        <a href="#" class="social-icon">i</a>
-                        <a href="#" class="social-icon">l</a>
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">💼</a>
                     </div>
                 </div>
                 <div class="footer-col">
