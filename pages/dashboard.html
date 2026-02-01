@@ -10,7 +10,7 @@
     <style>
         .dashboard-body {
             display: flex;
-            min-height: 100vh;
+            min-height: auto;
             background: #f0f2f5;
         }
 
@@ -50,6 +50,8 @@
         .main-content {
             flex: 1;
             padding: 40px;
+            overflow-y: auto;
+            min-height: auto;
         }
 
         .stat-card {
@@ -157,7 +159,57 @@
             transform: translateY(-1px);
         }
 
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.is-active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.is-active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
         @media (max-width: 992px) {
+            .hamburger {
+                display: flex;
+                visibility: visible;
+            }
+
             .sidebar {
                 position: fixed;
                 left: -260px;
@@ -173,49 +225,117 @@
 
             .dashboard-body {
                 flex-direction: column;
+                min-height: auto;
             }
 
             .main-content {
                 padding: 20px;
+                overflow-y: auto;
+                min-height: auto;
             }
 
             .grid-4 {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
             }
         }
 
         @media (max-width: 768px) {
             .sidebar {
-                width: 100%;
-                left: -100%;
+                width: 280px;
+                left: -280px;
             }
 
             .grid-4,
             .grid-3 {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .main-content {
                 padding: 15px;
+                overflow-y: auto;
+                min-height: auto;
             }
 
             .stat-card {
                 flex-direction: column;
                 text-align: center;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
             }
 
             table {
-                font-size: 14px;
+                font-size: 12px;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
             }
 
             th, td {
+                padding: 8px 12px;
+                min-width: 120px;
+            }
+
+            .badge {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+
+            select {
+                font-size: 11px;
+                padding: 3px 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
                 padding: 10px;
+                overflow-y: auto;
+                min-height: auto;
+            }
+
+            .stat-card {
+                padding: 12px;
+            }
+
+            .stat-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 
 <body class="dashboard-body">
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar">
@@ -238,7 +358,7 @@
         <header
             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: var(--shadow);">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <div class="hamburger" id="dashMenu" style="display: block; visibility: hidden;">
+                <div class="hamburger" id="dashMenu" style="display: flex; visibility: visible;">
                     <span></span><span></span><span></span>
                 </div>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -474,16 +594,38 @@
             });
         });
 
-        // Mobile Sidebar Toggle (Wait for main.js or implement here)
+        // Mobile Sidebar Toggle
         window.addEventListener('resize', () => {
             const menu = document.getElementById('dashMenu');
-            menu.style.visibility = window.innerWidth <= 992 ? 'visible' : 'hidden';
-            menu.classList.remove('is-active');
+            if (window.innerWidth <= 992) {
+                menu.style.visibility = 'visible';
+                menu.style.display = 'flex';
+            } else {
+                menu.style.visibility = 'hidden';
+                menu.style.display = 'none';
+                document.getElementById('sidebar').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+                menu.classList.remove('is-active');
+            }
         });
 
         document.getElementById('dashMenu').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
             this.classList.toggle('is-active');
+        });
+
+        // Close sidebar when clicking overlay
+        document.getElementById('overlay').addEventListener('click', function () {
+            const sidebar = document.getElementById('sidebar');
+            const menu = document.getElementById('dashMenu');
+            
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            menu.classList.remove('is-active');
         });
 
         // Initial check for menu visibility

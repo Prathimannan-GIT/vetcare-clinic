@@ -51,21 +51,18 @@
         }
 
         .back-home {
-            position: absolute;
-            top: 20px;
-            left: 20px;
             background: rgba(255, 255, 255, 0.9);
             border: 2px solid var(--secondary);
             color: var(--secondary);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .back-home:hover {
@@ -77,10 +74,8 @@
 
         @media (max-width: 480px) {
             .back-home {
-                top: 15px;
-                left: 15px;
-                padding: 8px 16px;
-                font-size: 13px;
+                padding: 6px 12px;
+                font-size: 12px;
             }
         }
     </style>
@@ -90,11 +85,13 @@
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
         <span class="theme-icon">🌙</span>
     </button>
-    <a href="../index.html" class="back-home">
-        <span>←</span> Back to Home
-    </a>
     <main class="auth-container">
         <div class="auth-card">
+            <div style="text-align: left; margin-bottom: 20px;">
+                <a href="../index.html" class="back-home" style="position: relative; top: auto; left: auto; display: inline-flex;">
+                    <span>←</span> Back to Home
+                </a>
+            </div>
             <div class="auth-title">
                 <div style="font-size: 3rem; margin-bottom: 10px;">📝</div>
                 <h2>Create Account</h2>

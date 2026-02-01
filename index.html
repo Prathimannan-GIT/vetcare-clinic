@@ -7,6 +7,320 @@
     <title>PetCare | Home - Premium Veterinary Clinic</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Global overflow protection */
+        html, body {
+            overflow-x: hidden;
+        }
+        
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            /* Container adjustments */
+            .container {
+                padding: 0 15px;
+                max-width: 100%;
+            }
+            
+            /* Section spacing */
+            .section {
+                padding: 40px 0;
+            }
+            
+            /* Grid layouts - convert to single column */
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* Auto-fit grid fixes */
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* Form elements mobile fixes */
+            input, select, button {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            
+            /* Card and content padding adjustments */
+            .card,
+            .stat-card {
+                padding: 20px !important;
+                margin: 0;
+            }
+            
+            /* Hero section mobile fixes */
+            .hero {
+                height: 60vh !important;
+                padding: 20px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem !important;
+                margin-bottom: 15px;
+            }
+            
+            .hero p {
+                font-size: 1rem !important;
+                margin-bottom: 20px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            /* Services Overview mobile fixes */
+            .grid.grid-3 .card {
+                padding: 25px 20px !important;
+            }
+            
+            .grid.grid-3 .card div {
+                font-size: 2.5rem !important;
+            }
+            
+            /* Emergency Care mobile fixes */
+            .section[style*="background: var(--primary)"] .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .section[style*="background: var(--primary)"] .container div[style*="flex: 1"] {
+                min-width: 100%;
+                padding: 0 10px;
+            }
+            
+            .section[style*="background: var(--primary)"] .container div[style*="flex: 1"] h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 15px;
+            }
+            
+            .section[style*="background: var(--primary)"] .container div:last-child .btn {
+                font-size: 1rem !important;
+                padding: 12px 25px;
+                max-width: 100%;
+            }
+            
+            /* Why Choose Us mobile fixes */
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+            
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] div[style*="padding: 20px"] {
+                padding: 20px 15px !important;
+            }
+            
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] ul {
+                gap: 15px !important;
+            }
+            
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] li {
+                flex-direction: column;
+                text-align: center !important;
+                gap: 8px !important;
+            }
+            
+            .grid[style*="repeat(auto-fit, minmax(300px, 1fr))"] li span {
+                font-size: 1.2rem !important;
+            }
+            
+            /* Testimonials mobile fixes */
+            .grid.grid-3 > div {
+                padding: 20px !important;
+                margin-bottom: 15px;
+            }
+            
+            .grid.grid-3 > div p {
+                font-size: 14px !important;
+                margin-bottom: 15px;
+            }
+            
+            /* Process Steps mobile fixes */
+            .grid.grid-4 {
+                gap: 25px !important;
+            }
+            
+            .grid.grid-4 > div {
+                padding: 20px 15px;
+            }
+            
+            .grid.grid-4 > div div {
+                font-size: 2.5rem !important;
+            }
+            
+            /* Pet Health Tips mobile fixes */
+            .grid.grid-3 > div {
+                padding: 25px 20px !important;
+            }
+            
+            .grid.grid-3 > div div {
+                font-size: 2rem !important;
+            }
+            
+            .grid.grid-3 > div ul {
+                font-size: 12px !important;
+                padding-left: 15px !important;
+            }
+            
+            /* Adoption Stories mobile fixes */
+            .grid.grid-3 > div img {
+                height: 150px !important;
+            }
+            
+            .grid.grid-3 > div h4 {
+                font-size: 1.1rem !important;
+                margin-bottom: 8px;
+            }
+            
+            .grid.grid-3 > div p {
+                font-size: 13px !important;
+                margin-bottom: 8px;
+            }
+            
+            .grid.grid-3 > div span {
+                font-size: 11px !important;
+                padding: 4px 12px;
+            }
+            
+            /* Health Assessment Tool mobile fixes */
+            .section[style*="background: linear-gradient"] .grid.grid-2 {
+                gap: 30px !important;
+            }
+            
+            .section[style*="background: linear-gradient"] .grid.grid-2 > div {
+                padding: 25px 20px !important;
+            }
+            
+            .section[style*="background: linear-gradient"] .grid.grid-2 > div div {
+                gap: 12px !important;
+            }
+            
+            .section[style*="background: linear-gradient"] .grid.grid-2 > div div div {
+                gap: 10px !important;
+            }
+            
+            .section[style*="background: linear-gradient"] .grid.grid-2 > div div div span {
+                font-size: 1.2rem !important;
+            }
+            
+            .section[style*="background: linear-gradient"] .grid.grid-2 > div:last-child button {
+                font-size: 14px !important;
+                padding: 12px 25px;
+            }
+            
+            /* Text size adjustments for mobile */
+            h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 20px;
+            }
+            
+            h3 {
+                font-size: 1.2rem !important;
+                margin-bottom: 15px;
+            }
+            
+            h4 {
+                font-size: 1.1rem !important;
+            }
+            
+            p {
+                font-size: 14px !important;
+                line-height: 1.5;
+            }
+            
+            /* Flex layouts mobile fixes */
+            div[style*="display: flex"] {
+                flex-wrap: wrap !important;
+            }
+            
+            div[style*="display: flex"][style*="gap: 30px"] {
+                gap: 15px !important;
+            }
+            
+            div[style*="display: flex"][style*="gap: 15px"] {
+                gap: 10px !important;
+            }
+            
+            /* Prevent overflow from long text */
+            * {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            /* Specific overflow fixes for problematic elements */
+            .section[style*="background: var(--primary)"] .container div[style*="min-width: 300px"] {
+                min-width: 100% !important;
+            }
+            
+            /* Newsletter form mobile fixes */
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .newsletter-form input {
+                width: 100%;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+        
+        /* Small mobile devices (max-width: 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .section {
+                padding: 30px 0;
+            }
+            
+            .hero {
+                height: 50vh !important;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .grid.grid-4 div div {
+                font-size: 2rem !important;
+            }
+            
+            .grid.grid-3 .card div,
+            .grid.grid-3 > div div {
+                font-size: 1.8rem !important;
+            }
+            
+            .grid.grid-3 > div img {
+                height: 120px !important;
+            }
+            
+            .section[style*="background: linear-gradient"] .grid.grid-2 > div {
+                padding: 20px 15px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -221,6 +535,137 @@
                         <h4>4. Happy Pet</h4>
                         <p style="font-size: 14px; color: var(--text-light);">Get a personalized treatment or wellness
                             plan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Pet Health Tips & Education Hub -->
+        <section class="section bg-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2>Seasonal Pet Care Tips</h2>
+                    <p style="color: var(--text-light);">Expert advice to keep your furry friends healthy year-round.</p>
+                </div>
+                <div class="grid grid-3">
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); border-top: 4px solid var(--secondary);">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🌞</div>
+                        <h3>Summer Safety</h3>
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 15px;">Protect your pets from heatstroke and dehydration during hot months.</p>
+                        <ul style="font-size: 13px; color: var(--text-light); text-align: left; padding-left: 20px;">
+                            <li>Provide fresh water daily</li>
+                            <li>Avoid walks during peak heat</li>
+                            <li>Never leave pets in parked cars</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); border-top: 4px solid var(--primary);">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🍂</div>
+                        <h3>Fall Wellness</h3>
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 15px;">Prepare your pets for changing weather and seasonal allergens.</p>
+                        <ul style="font-size: 13px; color: var(--text-light); text-align: left; padding-left: 20px;">
+                            <li>Update flea and tick prevention</li>
+                            <li>Monitor for mold allergies</li>
+                            <li>Adjust exercise routines</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); border-top: 4px solid var(--secondary);">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">❄️</div>
+                        <h3>Winter Protection</h3>
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 15px;">Keep your pets warm and safe during cold winter months.</p>
+                        <ul style="font-size: 13px; color: var(--text-light); text-align: left; padding-left: 20px;">
+                            <li>Limit outdoor exposure time</li>
+                            <li>Protect paws from ice and salt</li>
+                            <li>Maintain healthy weight for insulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Pet Adoption Success Stories -->
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2>Happy Tails: Adoption Success Stories</h2>
+                    <p style="color: var(--text-light);">Celebrating the joy of rescued pets finding their forever homes.</p>
+                </div>
+                <div class="grid grid-3">
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1583337134247-46d92780eb5c?auto=format&fit=crop&q=80&w=400"
+                            alt="Adopted dog" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+                        <h4>Max's Journey</h4>
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 10px;">Rescued from the streets, Max now thrives with his loving family.</p>
+                        <span style="background: var(--success); color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px;">Adopted 6 months ago</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&q=80&w=400"
+                            alt="Adopted cat" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+                        <h4>Luna's New Life</h4>
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 10px;">After months in shelter care, Luna found her perfect match.</p>
+                        <span style="background: var(--success); color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px;">Adopted 3 months ago</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=400"
+                            alt="Adopted golden retriever" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+                        <h4>Buddy's Second Chance</h4>
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 10px;">This golden retriever found his forever home after months of waiting.</p>
+                        <span style="background: var(--success); color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px;">Adopted 2 weeks ago</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-primary">View All Success Stories</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Interactive Pet Health Assessment Tool -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="color: white;">Quick Pet Health Check</h2>
+                    <p style="font-size: 1.1rem;">Take our 2-minute assessment to evaluate your pet's wellness</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
+                    <div class="grid grid-2" style="gap: 40px; align-items: center;">
+                        <div>
+                            <h3 style="margin-bottom: 20px;">What We Evaluate:</h3>
+                            <div style="display: grid; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <span style="font-size: 1.5rem;">🍽️</span>
+                                    <div>
+                                        <strong>Diet & Nutrition</strong>
+                                        <p style="font-size: 14px; opacity: 0.9; margin: 0;">Eating habits and weight management</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <span style="font-size: 1.5rem;">🏃</span>
+                                    <div>
+                                        <strong>Activity Level</strong>
+                                        <p style="font-size: 14px; opacity: 0.9; margin: 0;">Exercise and mobility assessment</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <span style="font-size: 1.5rem;">😊</span>
+                                    <div>
+                                        <strong>Behavior & Mood</strong>
+                                        <p style="font-size: 14px; opacity: 0.9; margin: 0;">Emotional well-being indicators</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <span style="font-size: 1.5rem;">🩺</span>
+                                    <div>
+                                        <strong>Physical Symptoms</strong>
+                                        <p style="font-size: 14px; opacity: 0.9; margin: 0;">Common health warning signs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">📋</div>
+                            <h3 style="margin-bottom: 15px;">Get Instant Results</h3>
+                            <p style="margin-bottom: 25px; opacity: 0.9;">Receive personalized recommendations and know when to schedule a visit.</p>
+                            <button class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-weight: 600; border: none; border-radius: 50px; cursor: pointer;">Start Health Assessment</button>
+                        </div>
                     </div>
                 </div>
             </div>

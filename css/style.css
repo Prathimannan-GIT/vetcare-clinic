@@ -525,7 +525,8 @@ footer {
     }
     
     .hamburger {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
     }
 }
 
