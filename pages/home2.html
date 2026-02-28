@@ -4,28 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetCare | Home Alternative - Premium Veterinary Clinic</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* Global overflow protection */
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
         }
-        
+
         /* Mobile-specific fixes */
         @media (max-width: 768px) {
+
             /* Container adjustments */
             .container {
                 padding: 0 15px;
                 max-width: 100%;
             }
-            
+
             /* Section spacing */
             .section {
                 padding: 40px 0;
             }
-            
+
             /* Grid layouts - convert to single column */
             .grid-2,
             .grid-3,
@@ -33,231 +35,233 @@
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
             }
-            
+
             /* Nutrition Calculator mobile fixes */
             #nutritionCalc {
                 gap: 15px !important;
             }
-            
+
             #nutritionCalc .grid {
                 grid-template-columns: 1fr !important;
                 gap: 10px !important;
             }
-            
+
             /* Form elements mobile fixes */
-            input, select, button {
+            input,
+            select,
+            button {
                 max-width: 100%;
                 box-sizing: border-box;
             }
-            
+
             /* Card and content padding adjustments */
             .card,
             .stat-card {
                 padding: 20px !important;
                 margin: 0;
             }
-            
+
             /* Hero section mobile fixes */
             .hero {
                 height: 60vh !important;
                 padding: 20px 0;
             }
-            
+
             .hero h1 {
                 font-size: 1.8rem !important;
                 margin-bottom: 15px;
             }
-            
+
             .hero p {
                 font-size: 1rem !important;
                 margin-bottom: 20px;
             }
-            
+
             .hero-btns {
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
             }
-            
+
             .hero-btns .btn {
                 width: 100%;
                 max-width: 280px;
             }
-            
+
             /* Statistics section mobile fixes */
             .grid.grid-4 div {
                 text-align: center;
                 padding: 15px 10px;
             }
-            
+
             .grid.grid-4 div div {
                 font-size: 2rem !important;
             }
-            
+
             /* Features section mobile fixes */
             .grid.grid-3 .card {
                 padding: 25px 20px !important;
             }
-            
+
             .grid.grid-3 .card div {
                 font-size: 2.5rem !important;
             }
-            
+
             /* Nutrition Calculator specific mobile fixes */
             .grid.grid-2[style*="gap: 40px"] {
                 gap: 20px !important;
             }
-            
-            .grid.grid-2 > div {
+
+            .grid.grid-2>div {
                 padding: 25px 20px !important;
             }
-            
+
             /* Virtual Consultation mobile fixes */
             .grid.grid-3[style*="gap: 30px"] {
                 gap: 20px !important;
             }
-            
-            .grid.grid-3 > div {
+
+            .grid.grid-3>div {
                 padding: 25px 20px !important;
             }
-            
-            .grid.grid-3 > div div {
+
+            .grid.grid-3>div div {
                 font-size: 2.5rem !important;
             }
-            
+
             /* Community Events mobile fixes */
             .grid.grid-2[style*="gap: 40px"] {
                 gap: 25px !important;
             }
-            
+
             /* Event cards mobile fixes */
-            .grid.grid-2 > div:first-child > div > div {
+            .grid.grid-2>div:first-child>div>div {
                 padding: 15px !important;
             }
-            
-            .grid.grid-2 > div:first-child > div > div h4 {
+
+            .grid.grid-2>div:first-child>div>div h4 {
                 font-size: 1rem !important;
                 margin-bottom: 8px;
             }
-            
-            .grid.grid-2 > div:first-child > div > div p {
+
+            .grid.grid-2>div:first-child>div>div p {
                 font-size: 13px !important;
                 margin-bottom: 8px;
             }
-            
+
             /* Workshop benefits mobile fixes */
-            .grid.grid-2 > div:last-child > div:first-child {
+            .grid.grid-2>div:last-child>div:first-child {
                 padding: 20px !important;
             }
-            
-            .grid.grid-2 > div:last-child > div:first-child > div > div {
+
+            .grid.grid-2>div:last-child>div:first-child>div>div {
                 gap: 12px !important;
             }
-            
-            .grid.grid-2 > div:last-child > div:first-child > div > div span {
+
+            .grid.grid-2>div:last-child>div:first-child>div>div span {
                 font-size: 1.5rem !important;
             }
-            
+
             /* Email subscription mobile fixes */
-            .grid.grid-2 > div:last-child > div:last-child > div {
+            .grid.grid-2>div:last-child>div:last-child>div {
                 flex-direction: column;
                 gap: 10px;
                 max-width: 100%;
             }
-            
-            .grid.grid-2 > div:last-child > div:last-child > div input,
-            .grid.grid-2 > div:last-child > div:last-child > div button {
+
+            .grid.grid-2>div:last-child>div:last-child>div input,
+            .grid.grid-2>div:last-child>div:last-child>div button {
                 width: 100%;
                 max-width: 100%;
             }
-            
+
             /* Call to Action mobile fixes */
             .section[style*="text-align: center"] .btn {
                 width: 100%;
                 max-width: 280px;
                 margin: 5px 0;
             }
-            
+
             /* Text size adjustments for mobile */
             h2 {
                 font-size: 1.5rem !important;
                 margin-bottom: 20px;
             }
-            
+
             h3 {
                 font-size: 1.2rem !important;
                 margin-bottom: 15px;
             }
-            
+
             h4 {
                 font-size: 1.1rem !important;
             }
-            
+
             p {
                 font-size: 14px !important;
                 line-height: 1.5;
             }
-            
+
             /* Flex layouts mobile fixes */
             div[style*="display: flex"] {
                 flex-wrap: wrap !important;
             }
-            
+
             div[style*="display: flex"][style*="gap: 15px"] {
                 gap: 10px !important;
             }
-            
+
             /* Prevent overflow from long text */
             * {
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 hyphens: auto;
             }
-            
+
             /* Specific overflow fixes for problematic elements */
-            .grid.grid-2 > div:first-child > div > div > div:first-child {
+            .grid.grid-2>div:first-child>div>div>div:first-child {
                 flex-wrap: wrap !important;
             }
-            
-            .grid.grid-2 > div:first-child > div > div > div:first-child h4 {
+
+            .grid.grid-2>div:first-child>div>div>div:first-child h4 {
                 flex: 1;
                 min-width: 0;
                 margin-right: 10px;
             }
-            
-            .grid.grid-2 > div:first-child > div > div > div:first-child span {
+
+            .grid.grid-2>div:first-child>div>div>div:first-child span {
                 flex-shrink: 0;
             }
         }
-        
+
         /* Small mobile devices (max-width: 480px) */
         @media (max-width: 480px) {
             .container {
                 padding: 0 10px;
             }
-            
+
             .section {
                 padding: 30px 0;
             }
-            
+
             .hero {
                 height: 50vh !important;
             }
-            
+
             .hero h1 {
                 font-size: 1.5rem !important;
             }
-            
+
             .grid.grid-4 div div {
                 font-size: 1.8rem !important;
             }
-            
+
             .grid.grid-3 .card div,
-            .grid.grid-3 > div div {
+            .grid.grid-3>div div {
                 font-size: 2rem !important;
             }
-            
-            .grid.grid-2 > div {
+
+            .grid.grid-2>div {
                 padding: 20px 15px !important;
             }
         }
@@ -271,7 +275,7 @@
         <div class="container">
             <div class="header-left">
                 <a href="../index.html" class="logo">
-                    <span>🐾</span> PetCare 
+                    <span>🐾</span> PetCare
                 </a>
             </div>
             <div class="header-center">
@@ -303,7 +307,7 @@
                     <a href="register.html" class="btn btn-primary">Register</a>
                 </div>
                 <div class="hamburger">
-                    
+
                     <span></span>
                     <span></span>
                     <span></span>
@@ -317,9 +321,11 @@
         <section class="hero"
             style="background: linear-gradient(rgba(32, 178, 170, 0.8), rgba(32, 178, 170, 0.8)), url('https://images.unsplash.com/photo-1422565096765-ba805f60dc66?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; color: white;">
             <div class="container" style="text-align: center;">
-                <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; max-width: 100%; word-wrap: break-word;">Your Pet's Health is <span
-                        class="highlight-text">Our Priority</span></h1>
-                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">Compassionate veterinary care with modern technology and experienced professionals who love animals.</p>
+                <h1
+                    style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; max-width: 100%; word-wrap: break-word;">
+                    Your Pet's Health is <span class="highlight-text">Our Priority</span></h1>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">Compassionate veterinary care with
+                    modern technology and experienced professionals who love animals.</p>
                 <div class="hero-btns" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                     <a href="appointments.html" class="btn btn-primary highlight-btn">Schedule Visit</a>
                     <a href="services.html" class="btn" style="border: 2px solid white; color: white;">View Services</a>
@@ -339,7 +345,8 @@
                         style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
                         <div style="font-size: 40px; margin-bottom: 15px;">🏥</div>
                         <h3>Modern Facility</h3>
-                        <p style="color: var(--text-light);">State-of-the-art equipment and comfortable environment for your pets.</p>
+                        <p style="color: var(--text-light);">State-of-the-art equipment and comfortable environment for
+                            your pets.</p>
                     </div>
                     <div class="card"
                         style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
@@ -351,7 +358,8 @@
                         style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
                         <div style="font-size: 40px; margin-bottom: 15px;">💝</div>
                         <h3>Loving Care</h3>
-                        <p style="color: var(--text-light);">We treat every pet with the love and compassion they deserve.</p>
+                        <p style="color: var(--text-light);">We treat every pet with the love and compassion they
+                            deserve.</p>
                     </div>
                 </div>
             </div>
@@ -390,7 +398,8 @@
             <div class="container">
                 <div style="text-align: center; margin-bottom: 50px;">
                     <h2>Pet Nutrition Calculator</h2>
-                    <p style="color: var(--text-light);">Get personalized dietary recommendations for your pet's specific needs</p>
+                    <p style="color: var(--text-light);">Get personalized dietary recommendations for your pet's
+                        specific needs</p>
                 </div>
                 <div class="grid grid-2" style="gap: 40px; align-items: start;">
                     <div style="background: white; padding: 35px; border-radius: 15px; box-shadow: var(--shadow);">
@@ -398,8 +407,10 @@
                         <form id="nutritionCalc" style="display: grid; gap: 20px;">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <div>
-                                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Pet Type</label>
-                                    <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Pet
+                                        Type</label>
+                                    <select
+                                        style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
                                         <option>Dog</option>
                                         <option>Cat</option>
                                         <option>Rabbit</option>
@@ -407,8 +418,10 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Age Group</label>
-                                    <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Age
+                                        Group</label>
+                                    <select
+                                        style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
                                         <option>Puppy/Kitten</option>
                                         <option>Adult</option>
                                         <option>Senior</option>
@@ -417,48 +430,56 @@
                             </div>
                             <div>
                                 <label style="display: block; margin-bottom: 8px; font-weight: 500;">Weight (kg)</label>
-                                <input type="number" placeholder="Enter weight" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                                <input type="number" placeholder="Enter weight"
+                                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
                             </div>
                             <div>
-                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Activity Level</label>
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Activity
+                                    Level</label>
                                 <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
                                     <option>Low (Indoor)</option>
                                     <option>Moderate (Regular walks)</option>
                                     <option>High (Very active)</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Nutrition Needs</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Nutrition
+                                Needs</button>
                         </form>
                     </div>
-                    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 35px; border-radius: 15px;">
+                    <div
+                        style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 35px; border-radius: 15px;">
                         <h3 style="margin-bottom: 20px;">Your Results Will Include:</h3>
                         <div style="display: grid; gap: 15px;">
                             <div style="display: flex; align-items: center; gap: 15px;">
                                 <span style="font-size: 1.5rem;">🍖</span>
                                 <div>
                                     <strong>Daily Calorie Intake</strong>
-                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Precise caloric needs based on metabolism</p>
+                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Precise caloric needs based on
+                                        metabolism</p>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 15px;">
                                 <span style="font-size: 1.5rem;">🥗</span>
                                 <div>
                                     <strong>Nutrient Breakdown</strong>
-                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Proteins, fats, and carbohydrates ratio</p>
+                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Proteins, fats, and
+                                        carbohydrates ratio</p>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 15px;">
                                 <span style="font-size: 1.5rem;">💧</span>
                                 <div>
                                     <strong>Hydration Requirements</strong>
-                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Daily water intake recommendations</p>
+                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Daily water intake
+                                        recommendations</p>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 15px;">
                                 <span style="font-size: 1.5rem;">🌟</span>
                                 <div>
                                     <strong>Supplement Suggestions</strong>
-                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Vitamins and minerals for optimal health</p>
+                                    <p style="font-size: 14px; opacity: 0.9; margin: 0;">Vitamins and minerals for
+                                        optimal health</p>
                                 </div>
                             </div>
                         </div>
@@ -472,13 +493,16 @@
             <div class="container">
                 <div style="text-align: center; margin-bottom: 50px;">
                     <h2>Telemedicine: Virtual Vet Consultations</h2>
-                    <p style="color: var(--text-light);">Connect with our veterinarians from the comfort of your home</p>
+                    <p style="color: var(--text-light);">Connect with our veterinarians from the comfort of your home
+                    </p>
                 </div>
                 <div class="grid grid-3" style="gap: 30px;">
-                    <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-top: 4px solid var(--primary);">
+                    <div
+                        style="background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-top: 4px solid var(--primary);">
                         <div style="font-size: 3rem; margin-bottom: 20px;">📹</div>
                         <h3>Video Consultations</h3>
-                        <p style="color: var(--text-light); margin-bottom: 20px;">Face-to-face virtual appointments for non-emergency concerns</p>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Face-to-face virtual appointments for
+                            non-emergency concerns</p>
                         <ul style="text-align: left; color: var(--text-light); font-size: 14px; padding-left: 20px;">
                             <li>Behavioral consultations</li>
                             <li>Minor injury assessment</li>
@@ -486,10 +510,12 @@
                             <li>Nutritional guidance</li>
                         </ul>
                     </div>
-                    <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-top: 4px solid var(--secondary);">
+                    <div
+                        style="background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-top: 4px solid var(--secondary);">
                         <div style="font-size: 3rem; margin-bottom: 20px;">💬</div>
                         <h3>Chat Support</h3>
-                        <p style="color: var(--text-light); margin-bottom: 20px;">Quick text-based consultations with certified vet technicians</p>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Quick text-based consultations with
+                            certified vet technicians</p>
                         <ul style="text-align: left; color: var(--text-light); font-size: 14px; padding-left: 20px;">
                             <li>Instant responses</li>
                             <li>Symptom evaluation</li>
@@ -497,10 +523,12 @@
                             <li>General pet care advice</li>
                         </ul>
                     </div>
-                    <div style="background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-top: 4px solid var(--success);">
+                    <div
+                        style="background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-top: 4px solid var(--success);">
                         <div style="font-size: 3rem; margin-bottom: 20px;">📱</div>
                         <h3>Mobile App Integration</h3>
-                        <p style="color: var(--text-light); margin-bottom: 20px;">Access your pet's health records and consult on-the-go</p>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Access your pet's health records and
+                            consult on-the-go</p>
                         <ul style="text-align: left; color: var(--text-light); font-size: 14px; padding-left: 20px;">
                             <li>Appointment scheduling</li>
                             <li>Prescription refills</li>
@@ -510,7 +538,8 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 40px;">
-                    <button class="btn btn-primary" style="background: var(--secondary);">Start Virtual Consultation</button>
+                    <button class="btn btn-primary" style="background: var(--secondary);">Start Virtual
+                        Consultation</button>
                 </div>
             </div>
         </section>
@@ -520,40 +549,53 @@
             <div class="container">
                 <div style="text-align: center; margin-bottom: 50px;">
                     <h2>Community Pet Events & Workshops</h2>
-                    <p style="color: var(--text-light);">Join our pet-loving community for educational and fun activities</p>
+                    <p style="color: var(--text-light);">Join our pet-loving community for educational and fun
+                        activities</p>
                 </div>
                 <div class="grid grid-2" style="gap: 40px;">
                     <div>
                         <h3 style="margin-bottom: 25px; color: var(--primary);">Upcoming Events</h3>
                         <div style="display: grid; gap: 20px;">
-                            <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                            <div
+                                style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
                                     <h4>Pet First Aid Workshop</h4>
-                                    <span style="background: var(--secondary); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px;">Free</span>
+                                    <span
+                                        style="background: var(--secondary); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px;">Free</span>
                                 </div>
-                                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 10px;">Learn essential emergency care techniques for your pets</p>
+                                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 10px;">Learn
+                                    essential emergency care techniques for your pets</p>
                                 <div style="display: flex; gap: 15px; font-size: 13px; color: var(--text-light);">
                                     <span>📅 March 15, 2026</span>
                                     <span>🕐 2:00 PM</span>
                                 </div>
                             </div>
-                            <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--secondary); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                            <div
+                                style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--secondary); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
                                     <h4>Puppy Socialization Day</h4>
-                                    <span style="background: var(--primary); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px;">$10</span>
+                                    <span
+                                        style="background: var(--primary); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px;">$10</span>
                                 </div>
-                                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 10px;">Safe environment for puppies to interact and play</p>
+                                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 10px;">Safe
+                                    environment for puppies to interact and play</p>
                                 <div style="display: flex; gap: 15px; font-size: 13px; color: var(--text-light);">
                                     <span>📅 March 20, 2026</span>
                                     <span>🕐 10:00 AM</span>
                                 </div>
                             </div>
-                            <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--success); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                            <div
+                                style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--success); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
                                     <h4>Nutrition Seminar</h4>
-                                    <span style="background: var(--success); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px;">Free</span>
+                                    <span
+                                        style="background: var(--success); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px;">Free</span>
                                 </div>
-                                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 10px;">Expert advice on pet nutrition and dietary planning</p>
+                                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 10px;">Expert advice
+                                    on pet nutrition and dietary planning</p>
                                 <div style="display: flex; gap: 15px; font-size: 13px; color: var(--text-light);">
                                     <span>📅 March 25, 2026</span>
                                     <span>🕐 6:00 PM</span>
@@ -563,36 +605,42 @@
                     </div>
                     <div>
                         <h3 style="margin-bottom: 25px; color: var(--primary);">Workshop Benefits</h3>
-                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); margin-bottom: 25px;">
+                        <div
+                            style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); margin-bottom: 25px;">
                             <div style="display: grid; gap: 20px;">
                                 <div style="display: flex; align-items: center; gap: 15px;">
                                     <span style="font-size: 2rem; color: var(--secondary);">🎓</span>
                                     <div>
                                         <strong>Expert Knowledge</strong>
-                                        <p style="color: var(--text-light); font-size: 14px; margin: 0;">Learn from certified veterinarians and specialists</p>
+                                        <p style="color: var(--text-light); font-size: 14px; margin: 0;">Learn from
+                                            certified veterinarians and specialists</p>
                                     </div>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 15px;">
                                     <span style="font-size: 2rem; color: var(--primary);">🤝</span>
                                     <div>
                                         <strong>Community Building</strong>
-                                        <p style="color: var(--text-light); font-size: 14px; margin: 0;">Connect with other pet owners in your area</p>
+                                        <p style="color: var(--text-light); font-size: 14px; margin: 0;">Connect with
+                                            other pet owners in your area</p>
                                     </div>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 15px;">
                                     <span style="font-size: 2rem; color: var(--success);">🎁</span>
                                     <div>
                                         <strong>Free Resources</strong>
-                                        <p style="color: var(--text-light); font-size: 14px; margin: 0;">Take home materials and samples for your pet</p>
+                                        <p style="color: var(--text-light); font-size: 14px; margin: 0;">Take home
+                                            materials and samples for your pet</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div style="text-align: center;">
                             <h4 style="margin-bottom: 15px;">Join Our Pet Community</h4>
-                            <p style="color: var(--text-light); margin-bottom: 20px;">Get notified about upcoming events and exclusive workshops</p>
+                            <p style="color: var(--text-light); margin-bottom: 20px;">Get notified about upcoming events
+                                and exclusive workshops</p>
                             <div style="display: flex; gap: 10px; max-width: 300px; margin: 0 auto;">
-                                <input type="email" placeholder="Your email" style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                                <input type="email" placeholder="Your email"
+                                    style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
                                 <button class="btn btn-primary">Subscribe</button>
                             </div>
                         </div>
@@ -605,7 +653,8 @@
         <section class="section">
             <div class="container" style="text-align: center;">
                 <h2 style="margin-bottom: 20px;">Ready to Visit Us?</h2>
-                <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 30px;">Join thousands of satisfied pet owners who trust PetCare Clinic for their beloved companions.</p>
+                <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 30px;">Join thousands of satisfied
+                    pet owners who trust PetCare Clinic for their beloved companions.</p>
                 <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                     <a href="appointments.html" class="btn btn-primary">Book Appointment</a>
                     <a href="tel:1234567890" class="btn btn-secondary">Call Us</a>
@@ -623,10 +672,14 @@
                     <p style="margin-top: 20px;">Dedicated to providing the highest quality medical care for your pets
                         since 2010. We treat every patient with the love and care they deserve.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">t</a>
-                        <a href="#" class="social-icon">i</a>
-                        <a href="#" class="social-icon">l</a>
+                        <a href="#" class="social-icon facebook" title="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon twitter" title="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon instagram" title="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon linkedin" title="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">

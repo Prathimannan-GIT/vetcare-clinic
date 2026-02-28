@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare | Dashboard - Manage Your Clinic</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .dashboard-body {
             display: flex;
-            min-height: auto;
+            min-height: 100vh;
             background: #f0f2f5;
         }
 
@@ -160,7 +161,7 @@
         }
 
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             cursor: pointer;
             padding: 5px;
@@ -204,7 +205,7 @@
             display: block;
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 1023px) {
             .hamburger {
                 display: flex;
                 visibility: visible;
@@ -288,7 +289,8 @@
                 white-space: nowrap;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 8px 12px;
                 min-width: 120px;
             }
@@ -339,10 +341,8 @@
 
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-brand">🐾 PetCare Admin</div>
-        <a href="../index.html" class="back-home">
-            <span>←</span> Back to Home
-        </a>
+        <div class="sidebar-brand">🐾 PetCare</div>
+
         <ul class="sidebar-nav">
             <li><a href="#" class="sidebar-link active" data-target="overview">🏠 Overview</a></li>
             <li><a href="#" class="sidebar-link" data-target="appointments">📅 Appointments</a></li>
@@ -358,14 +358,12 @@
         <header
             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: var(--shadow);">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <div class="hamburger" id="dashMenu" style="display: flex; visibility: visible;">
+                <div class="hamburger" id="dashMenu">
                     <span></span><span></span><span></span>
                 </div>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <span class="theme-icon">🌙</span>
-                </button>
+
             </div>
-            <h2 id="dashTitle" style="color: var(--primary);">Dashboard Overview</h2>
+            <h2 id="dashTitle" style="color: var(--primary);"> Overview</h2>
             <div id="userWelcome"
                 style="background: var(--bg-light); padding: 8px 20px; border-radius: 50px; font-weight: 600; color: var(--primary);">
                 👋 Hi, <span class="highlight-text">Admin</span></div>
@@ -561,7 +559,7 @@
             </div>
         </section>
 
-       
+
     </main>
 
     <script>
@@ -597,7 +595,7 @@
         // Mobile Sidebar Toggle
         window.addEventListener('resize', () => {
             const menu = document.getElementById('dashMenu');
-            if (window.innerWidth <= 992) {
+            if (window.innerWidth < 1024) {
                 menu.style.visibility = 'visible';
                 menu.style.display = 'flex';
             } else {
@@ -612,7 +610,7 @@
         document.getElementById('dashMenu').addEventListener('click', function () {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');
-            
+
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
             this.classList.toggle('is-active');
@@ -622,14 +620,20 @@
         document.getElementById('overlay').addEventListener('click', function () {
             const sidebar = document.getElementById('sidebar');
             const menu = document.getElementById('dashMenu');
-            
+
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
             menu.classList.remove('is-active');
         });
 
         // Initial check for menu visibility
-        if (window.innerWidth <= 992) document.getElementById('dashMenu').style.visibility = 'visible';
+        if (window.innerWidth < 1024) {
+            document.getElementById('dashMenu').style.visibility = 'visible';
+            document.getElementById('dashMenu').style.display = 'flex';
+        } else {
+            document.getElementById('dashMenu').style.visibility = 'hidden';
+            document.getElementById('dashMenu').style.display = 'none';
+        }
 
         // Load Appointments from LocalStorage
         function loadDashboardData() {
