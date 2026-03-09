@@ -573,8 +573,9 @@
     </main>
 
     <script>
-        // Auth Check
-        // Development bypass - remove this in production
+        // Auth Check - Disabled for demo
+        // In production, uncomment the following lines to enable authentication
+        /*
         const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
         
         // Check if user is logged in or in development mode
@@ -582,6 +583,7 @@
             // Only redirect to login if not in development mode and not logged in
             window.location.href = 'login.html';
         }
+        */
 
         // Sidebar Navigation Logic
         const sidebarLinks = document.querySelectorAll('.sidebar-link');
